@@ -1,19 +1,23 @@
 
-import { Component} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CoursesService } from './courses.service';
 
 
 
 @Component ({
-    selector: 'courses',  //<courses>
+    selector: 'courses', //<courses>
     template: `<h2>{{ getTitle() }}</h2>
     <ul>
-    <li *ngFor="let course of courses">
-     {{ course }}
-    </li>
+      @for (course of courses; track course) {
+        <li>
+          {{ course }}
+        </li>
+      }
     </ul>
-
-    `
+    
+    `,
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class CoursesComponent  {
     title = "List of courses"
