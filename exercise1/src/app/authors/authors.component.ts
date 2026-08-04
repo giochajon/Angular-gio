@@ -1,5 +1,5 @@
 import { AuthorServiceService } from './../author-service.service';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'app-authors',
@@ -14,6 +14,7 @@ import { Component } from '@angular/core';
     }
   </ul>
   `,
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AuthorsComponent  {
