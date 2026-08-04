@@ -8,11 +8,13 @@ import { CoursesService } from './courses.service';
     selector: 'courses', //<courses>
     template: `<h2>{{ getTitle() }}</h2>
     <ul>
-    <li *ngFor="let course of courses">
-     {{ course }}
-    </li>
+      @for (course of courses; track course) {
+        <li>
+          {{ course }}
+        </li>
+      }
     </ul>
-
+    
     `,
     standalone: false
 })
