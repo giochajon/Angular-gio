@@ -1,18 +1,21 @@
 import { AuthorServiceService } from './../author-service.service';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-authors',
-  //templateUrl: './authors.component.html',
-  styleUrls: ['./authors.component.css'],
-  template:`
+    selector: 'app-authors',
+    //templateUrl: './authors.component.html',
+    styleUrls: ['./authors.component.css'],
+    template: `
   <ul>
-  <li *ngFor="let author of authors">
-   {{ author }}
-  </li>
+    @for (author of authors; track author) {
+      <li>
+        {{ author }}
+      </li>
+    }
   </ul>
-  `
-
+  `,
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class AuthorsComponent  {
   authors; //= ['auth1','auth2','auth3','auth4']
