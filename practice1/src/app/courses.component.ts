@@ -1,5 +1,5 @@
 
-import { Component} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CoursesService } from './courses.service';
 
 
@@ -16,6 +16,7 @@ import { CoursesService } from './courses.service';
     </ul>
     
     `,
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class CoursesComponent  {
