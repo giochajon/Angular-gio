@@ -7,9 +7,11 @@ import { Component } from '@angular/core';
     styleUrls: ['./authors.component.css'],
     template: `
   <ul>
-  <li *ngFor="let author of authors">
-   {{ author }}
-  </li>
+    @for (author of authors; track author) {
+      <li>
+        {{ author }}
+      </li>
+    }
   </ul>
   `,
     standalone: false
